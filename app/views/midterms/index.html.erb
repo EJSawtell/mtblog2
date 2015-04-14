@@ -1,0 +1,27 @@
+<h1>Listing midterms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Text</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @midterms.each do |midterm| %>
+      <tr>
+        <td><%= midterm.Title %></td>
+        <td><%= midterm.text %></td>
+        <td><%= link_to 'Show', midterm %></td>
+        <td><%= link_to 'Edit', edit_midterm_path(midterm) %></td>
+        <td><%= link_to 'Destroy', midterm, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Midterm', new_midterm_path %>
